@@ -1,5 +1,4 @@
-FROM mikefaille/
-centos-hbase:latest
+FROM mikefaille/centos-hbase:latest
 MAINTAINER michael@faille.io <michael@faille.io>
 
 ENV COMPRESSION gz
