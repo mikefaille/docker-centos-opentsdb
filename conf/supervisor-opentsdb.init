@@ -1,0 +1,5 @@
+[program:opentsdb]
+#environment="COMPRESSION=gzip"
+command="/data/start-opentsdb.sh"
+stopwaitsecs=60
+priority=20
