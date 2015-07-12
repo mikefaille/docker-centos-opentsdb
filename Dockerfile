@@ -1,4 +1,4 @@
-FROM centos-hbase:7
+FROM centos-hbase:latest
 MAINTAINER michael@faille.io <michael@faille.io>
 
 ENV COMPRESSION gz
