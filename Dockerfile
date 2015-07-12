@@ -1,4 +1,5 @@
-FROM mikefaille/centos-hbase:latest
+FROM mikefaille/
+centos-hbase:latest
 MAINTAINER michael@faille.io <michael@faille.io>
 
 ENV COMPRESSION gz
@@ -14,7 +15,7 @@ ENV TSDB $OPENTSDB_DIR
 
 # Opentsdb foundation
 RUN git clone --single-branch --depth 1 git://github.com/OpenTSDB/opentsdb.git /tsdb && \
-    cd $TSDB && yum install autoconf automake sysconftool.noarch java-1.8.0-openjdk-devel make -y && bash ./build.sh &
+    cd $TSDB && yum install autoconf automake sysconftool.noarch java-1.8.0-openjdk-devel make -y && bash ./build.sh && \
     yum remove  autoconf automake sysconftool.noarch java-1.8.0-openjdk-devel  -y && yum autoremove -y && yum clean all
 ADD conf/opentsdb.conf $TSDB/opentsdb.conf
 EXPOSE 4242
